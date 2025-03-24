@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import YoutubeVideo from "./Video.js";
-import YoutubeVideo2 from "./Video2.js";
+
 import { useNavigate } from "react-router-dom";
 import Signup from "./SignUp.js";
 
@@ -12,8 +11,8 @@ function Home() {
       <MainHeader>
         <MainText>JobIt</MainText>
 
-        <YoutubeVideo />
-        <YoutubeVideo2 />
+        <Arti1>당신의 취업을 잡으세요. 잡아잇</Arti1>
+
         <LoginSign>
           <Login onClick={() => navigate("/signup")}>로그인</Login>
 
@@ -32,7 +31,7 @@ const MainHeader = styled.div`
   border-radius: 20%;
   font-size: 20px;
   color: mediumaquamarine;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
@@ -58,5 +57,15 @@ const LoginSign = styled.div`
 `;
 const MainText = styled.div`
   font-size: 50px;
-  color: #eaeaea;
+  color: #000dc9;
+  font-style: jetBrains Mono;
+`;
+const Arti1 = styled.div`
+  font-size: 20px;
+  color: #000000;
+  white-space: pre-line;
+`;
+const Arti2 = styled.div`
+  font-size: 20px;
+  color: #000000;
 `;
