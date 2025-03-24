@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 import { useNavigate } from "react-router-dom";
 import Signup from "./SignUp.js";
-
+import NaverLoginButton from "./네이버_로그인버튼.png";
+import JobItButton from "./잡아잇아이콘.png";
 function Home() {
   const navigate = useNavigate(); // React Router의 useNavigate 사용
 
@@ -14,7 +15,11 @@ function Home() {
         <Arti1>당신의 취업을 잡으세요. 잡아잇</Arti1>
 
         <LoginSign>
-          <Login onClick={() => navigate("/signup")}>로그인</Login>
+          <SocialLogin src={NaverLoginButton}></SocialLogin>
+          <LocalLogin
+            src={JobItButton}
+            onClick={() => navigate("/signup")}
+          ></LocalLogin>
 
           {/* 회원가입 클릭 시 이동 */}
         </LoginSign>
@@ -42,9 +47,10 @@ const MainBody = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const Login = styled.div`
-  color: rgb(193, 193, 233);
-  padding-bottom: 20px;
+const LocalLogin = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
 `;
 const Sign = styled.div`
   color: rgb(193, 193, 233);
@@ -65,7 +71,9 @@ const Arti1 = styled.div`
   color: #000000;
   white-space: pre-line;
 `;
-const Arti2 = styled.div`
-  font-size: 20px;
-  color: #000000;
+
+const SocialLogin = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
 `;
