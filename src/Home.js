@@ -1,25 +1,23 @@
-import styled from "styled-components";
-
+import styled, { createGlobalStyle } from "styled-components";
+import JobItLoginButton from "./JobItLoginButton.png";
 import { useNavigate } from "react-router-dom";
 import Signup from "./SignUp.js";
-import NaverLoginButton from "./네이버_로그인버튼.png";
-import JobItButton from "./잡아잇아이콘.png";
+
 function Home() {
   const navigate = useNavigate(); // React Router의 useNavigate 사용
 
   return (
     <MainBody>
       <MainHeader>
+        <GlobalStyle />
         <MainText>JobIt</MainText>
-
-        <Arti1>당신의 취업을 잡으세요. 잡아잇</Arti1>
+        <ArtiContainer>
+          <Arti1>당신의 취업을 잡으세요.</Arti1>
+          <Arti2>잡아잇</Arti2>
+        </ArtiContainer>
 
         <LoginSign>
-          <SocialLogin src={NaverLoginButton}></SocialLogin>
-          <LocalLogin
-            src={JobItButton}
-            onClick={() => navigate("/signup")}
-          ></LocalLogin>
+          <LocalLogin onClick={() => navigate("/signup")}>로그인</LocalLogin>
 
           {/* 회원가입 클릭 시 이동 */}
         </LoginSign>
@@ -28,6 +26,14 @@ function Home() {
   );
 }
 export default Home;
+const GlobalStyle = createGlobalStyle`
+ @font-face {
+    font-family: "JetBrainsMono";
+    src: url("/JetBrainsMono-Regular.ttf") format("truetype"); /* 절대 경로 */
+    font-weight: normal;
+    font-style: normal;
+  }
+`;
 const MainHeader = styled.div`
   width: 50%;
   height: 90vh;
@@ -47,10 +53,18 @@ const MainBody = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const LocalLogin = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
+const LocalLogin = styled.div`
+  font-size: 30px;
+  color: #ffffff;
+  font-family: "JetBrainsMono", sans-serif;
+  background-image: url(${JobItLoginButton});
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px; /* 이미지 비율에 맞춰 적절히 조정 */
+  height: 70px; /* 이미지 비율에 맞춰 적절히 조정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const Sign = styled.div`
   color: rgb(193, 193, 233);
@@ -62,18 +76,29 @@ const LoginSign = styled.div`
   gap: 8px;
 `;
 const MainText = styled.div`
-  font-size: 50px;
+  font-family: "JetBrainsMono", sans-serif;
+  margin-top: 30px;
+  font-size: 100px;
   color: #000dc9;
-  font-style: jetBrains Mono;
+  letter-spacing: -0.05em;
 `;
+const ArtiContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; /* 간격 줄이기 */
+  margin-top: -50px;
+`;
+
 const Arti1 = styled.div`
+  font-family: "JetBrainsMono", sans-serif;
   font-size: 20px;
   color: #000000;
   white-space: pre-line;
 `;
-
-const SocialLogin = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
+const Arti2 = styled.div`
+  font-family: "JetBrainsMono", sans-serif;
+  font-size: 20px;
+  color: #000000;
+  white-space: pre-line;
 `;
