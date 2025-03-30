@@ -7,36 +7,43 @@ function Home() {
   const navigate = useNavigate(); // React Router의 useNavigate 사용
 
   return (
-    <MainBody>
-      <MainHeader>
-        <GlobalStyle />
-        <MainText>JobIt</MainText>
-        <ArtiContainer>
-          <Arti1>당신의 취업을 잡으세요.</Arti1>
-          <Arti2>잡아잇</Arti2>
-        </ArtiContainer>
+    <Main>
+      <GlobalStyle />
+      <MainText>JobIt</MainText>
+      <ArtiContainer>
+        <Arti1>당신의 취업을 잡으세요.</Arti1>
+        <Arti2>잡아잇</Arti2>
+      </ArtiContainer>
 
-        <LoginSign>
-          <LocalLogin onClick={() => navigate("/signup")}>로그인</LocalLogin>
+      <LoginSign>
+        <LocalLogin onClick={() => navigate("/signup")}>로그인</LocalLogin>
 
-          {/* 회원가입 클릭 시 이동 */}
-        </LoginSign>
-      </MainHeader>
-    </MainBody>
+        {/* 회원가입 클릭 시 이동 */}
+      </LoginSign>
+    </Main>
   );
 }
 export default Home;
 const GlobalStyle = createGlobalStyle`
- @font-face {
+ html, body { /* html과 body 요소에 동시에 적용 */
+    margin: 0;
+    padding: 0; /* 혹시 모를 padding도 제거 */
+  }
+  @font-face {
     font-family: "JetBrainsMono";
     src: url("/JetBrainsMono-Regular.ttf") format("truetype"); /* 절대 경로 */
     font-weight: normal;
     font-style: normal;
   }
 `;
-const MainHeader = styled.div`
-  width: 50%;
-  height: 90vh;
+const Main = styled.div`
+  width: 100%;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  height: 100vh;
   display: flex;
   border-style: none;
   border-radius: 20%;
@@ -46,22 +53,19 @@ const MainHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  margin: 0;
 `;
-const MainBody = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-`;
+
 const LocalLogin = styled.div`
-  font-size: 30px;
+  font-size: 25px;
   color: #ffffff;
   font-family: "JetBrainsMono", sans-serif;
   background-image: url(${JobItLoginButton});
+  background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 300px; /* 이미지 비율에 맞춰 적절히 조정 */
-  height: 70px; /* 이미지 비율에 맞춰 적절히 조정 */
+  width: 200px; /* 이미지 비율에 맞춰 적절히 조정 */
+  height: 60px; /* 이미지 비율에 맞춰 적절히 조정 */
   display: flex;
   justify-content: center;
   align-items: center;

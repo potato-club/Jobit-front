@@ -2,7 +2,7 @@ import React from "react";
 import NaverLogin from "react-naver-login";
 import { useNavigate } from "react-router-dom";
 import SignUpLocal from "./SignUpLocal";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 function Signup() {
   const navigate = useNavigate();
 
@@ -18,6 +18,7 @@ function Signup() {
 
   return (
     <MainFrame>
+      <GlobalStyle />
       <SignupName>JobIt</SignupName>
       <SignUpLocal />
       <NaverLogin
@@ -41,6 +42,18 @@ function Signup() {
 
 export default Signup;
 
+const GlobalStyle = createGlobalStyle`
+ html, body { /* html과 body 요소에 동시에 적용 */
+    margin: 0;
+    padding: 0; /* 혹시 모를 padding도 제거 */
+  }
+  @font-face {
+    font-family: "JetBrainsMono";
+    src: url("/JetBrainsMono-Regular.ttf") format("truetype"); /* 절대 경로 */
+    font-weight: normal;
+    font-style: normal;
+  }
+`;
 const MainFrame = styled.div`
   border: none;
   display: flex;
@@ -49,9 +62,11 @@ const MainFrame = styled.div`
   flex-direction: column;
 `;
 const SignupName = styled.div`
-  font-size: 50px;
-  color: midnightblue;
-  font-weight: bold;
+  font-family: "JetBrainsMono", sans-serif;
+  margin-top: 30px;
+  font-size: 100px;
+  color: #000dc9;
+  letter-spacing: -0.05em;
 `;
 const Button = styled.div`
   background-color: #03c75a; // 네이버 그린
