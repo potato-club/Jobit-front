@@ -84,6 +84,8 @@ const MainText = styled.div`
   margin-top: 30px;
   font-size: 100px;
   color: #000dc9;
+  align-items: center;
+  justify-self: center;
   letter-spacing: -0.05em;
 `;
 const ArtiContainer = styled.div`

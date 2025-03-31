@@ -3,6 +3,7 @@ import NaverLogin from "react-naver-login";
 import { useNavigate } from "react-router-dom";
 import SignUpLocal from "./SignUpLocal";
 import styled, { createGlobalStyle } from "styled-components";
+import NaverLoginButton from "./네이버_로그인버튼.png";
 function Signup() {
   const navigate = useNavigate();
 
@@ -21,21 +22,27 @@ function Signup() {
       <GlobalStyle />
       <SignupName>JobIt</SignupName>
       <SignUpLocal />
-      <NaverLogin
-        clientId="0tsRNue91Jpr8WiCObrH"
-        callbackUrl="http://localhost:3000/auth/naver/callback"
-        onSuccess={handleSuccess}
-        onFailure={handleFailure}
-        render={(props) => (
-          <Button onClick={props.onClick}>네이버 로그인</Button>
-        )}
-      >
-        {" "}
-        <button>네이버 로그인</button>
-      </NaverLogin>
-      <Identification onClick={() => navigate("/lsp")}>
-        JobIt 회원가입
-      </Identification>
+      <JobItSignup>
+        <Signup1>비밀번호찾기</Signup1>
+        <Signup2>아이디찾기</Signup2>
+        <Signup3>회원가입</Signup3>
+      </JobItSignup>
+      <LoginLocation>
+        <NaverLogin
+          clientId="0tsRNue91Jpr8WiCObrH"
+          callbackUrl="http://localhost:3000/auth/naver/callback"
+          onSuccess={handleSuccess}
+          onFailure={handleFailure}
+          render={(props) => (
+            <Button src={NaverLoginButton} onClick={props.onClick}></Button>
+          )}
+        >
+          {" "}
+        </NaverLogin>
+        <Identification onClick={() => navigate("/lsp")}>
+          JobIt 회원가입
+        </Identification>
+      </LoginLocation>
     </MainFrame>
   );
 }
@@ -44,7 +51,7 @@ export default Signup;
 
 const GlobalStyle = createGlobalStyle`
  html, body { /* html과 body 요소에 동시에 적용 */
-    margin: 0;
+  margin:0;
     padding: 0; /* 혹시 모를 padding도 제거 */
   }
   @font-face {
@@ -55,10 +62,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 const MainFrame = styled.div`
+  width: 100%;
+  height: 100vh;
   border: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
 `;
 const SignupName = styled.div`
@@ -66,23 +75,52 @@ const SignupName = styled.div`
   margin-top: 30px;
   font-size: 100px;
   color: #000dc9;
+  justify-self: center;
   letter-spacing: -0.05em;
 `;
-const Button = styled.div`
-  background-color: #03c75a; // 네이버 그린
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 24px;
-  border: "none";
-  border-radius: 6px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+const Button = styled.img`
+  width: 30px;
+  height: 30px;
 `;
 
 const Identification = styled.div`
   background-color: "gray";
   color: "white";
+`;
+const LoginLocation = styled.div`
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 100px;
+`;
+const JobItSignup = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  height: 10vh;
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
+const Signup1 = styled.div`
+  margin-left: auto;
+  width: 100px;
+  max-height: 100px;
+  text-align: center;
+  justify-self: flex-end;
+`;
+const Signup2 = styled.div`
+  width: 100px;
+  height: 10px;
+  margin-left: 20px;
+  justify-self: center;
+  margin-right: 20px;
+  text-align: center;
+`;
+const Signup3 = styled.div`
+  width: 100px;
+  height: 10px;
+  margin-right: auto;
+  justify-self: flex-start;
+  text-align: center;
 `;
