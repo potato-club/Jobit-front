@@ -25,7 +25,7 @@ function Signup() {
       <JobItSignup>
         <Signup1>비밀번호찾기</Signup1>
         <Signup2>아이디찾기</Signup2>
-        <Signup3>회원가입</Signup3>
+        <Signup3 onClick={() => navigate("/lsp")}>회원가입</Signup3>
       </JobItSignup>
       <LoginLocation>
         <NaverLogin
@@ -39,9 +39,6 @@ function Signup() {
         >
           {" "}
         </NaverLogin>
-        <Identification onClick={() => navigate("/lsp")}>
-          JobIt 회원가입
-        </Identification>
       </LoginLocation>
     </MainFrame>
   );
@@ -83,10 +80,6 @@ const Button = styled.img`
   height: 30px;
 `;
 
-const Identification = styled.div`
-  background-color: "gray";
-  color: "white";
-`;
 const LoginLocation = styled.div`
   margin-top: auto;
   display: flex;
@@ -107,6 +100,7 @@ const Signup1 = styled.div`
   width: 100px;
   max-height: 100px;
   text-align: center;
+  opacity: 55%;
   justify-self: flex-end;
 `;
 const Signup2 = styled.div`
@@ -116,6 +110,7 @@ const Signup2 = styled.div`
   justify-self: center;
   margin-right: 20px;
   text-align: center;
+  opacity: 55%;
 `;
 const Signup3 = styled.div`
   width: 100px;
@@ -123,4 +118,5 @@ const Signup3 = styled.div`
   margin-right: auto;
   justify-self: flex-start;
   text-align: center;
+  opacity: 55%;
 `;

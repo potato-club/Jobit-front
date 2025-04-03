@@ -39,8 +39,7 @@ const GlobalStyle = createGlobalStyle`
 const Main = styled.div`
   width: 100%;
 
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 100vh;
   background-position: center;
 
   height: 100vh;
