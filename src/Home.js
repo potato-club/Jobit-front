@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import JobItLoginButton from "./JobItLoginButton.png";
 import { useNavigate } from "react-router-dom";
-import Signup from "./SignUp.js";
 
 function Home() {
   const navigate = useNavigate(); // React Router의 useNavigate 사용
@@ -24,6 +23,7 @@ function Home() {
   );
 }
 export default Home;
+
 const GlobalStyle = createGlobalStyle`
  html, body { /* html과 body 요소에 동시에 적용 */
     margin: 0;
@@ -69,10 +69,7 @@ const LocalLogin = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const Sign = styled.div`
-  color: rgb(193, 193, 233);
-  padding-bottom: 20px;
-`;
+
 const LoginSign = styled.div`
   display: flex;
   flex-direction: row;

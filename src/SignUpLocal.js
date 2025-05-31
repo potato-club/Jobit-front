@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-
+import { useNavigate } from "react-router-dom";
 const SignUpLocal = ({ text }) => {
+  const navgate = useNavigate();
   return (
     <MainFrame>
       <LSignup>
         <Id placeholder="아이디" />
         <Passwd placeholder="비밀번호" type="password" />
-        <LoginButton2>로그인</LoginButton2>
+        <LoginButton2 onClick={() => navgate("/jp")}>로그인</LoginButton2>
       </LSignup>
     </MainFrame>
   );
