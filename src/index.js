@@ -16,7 +16,7 @@ root.render(
         <Route path="/signup" element={<Signup />} />
         <Route path="/lsp" element={<LocalSignuPage />} />
         <Route path="/signuplocal" element={<SignUpLocal />} />
-        <Route path="/p" element={<JobitPage />} />
+        <Route path="/jp" element={<JobitPage />} />
       </Routes>
     </Router>
   </React.StrictMode>

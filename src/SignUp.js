@@ -10,7 +10,7 @@ function Signup() {
   const handleSuccess = (response) => {
     console.log("네이버 로그인 성공:", response);
     // 백엔드에 토큰 전달 가능
-    navigate("/"); // 로그인 후 이동할 페이지
+    navigate("/jp"); // 로그인 후 이동할 페이지
   };
 
   const handleFailure = (error) => {
