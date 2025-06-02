@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 const ContentArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -28,9 +28,11 @@ function Main() {
     <LayoutSec>
       <LayoutFirst>
         <JobitHeader>JobIt</JobitHeader>
-        <JobitTrendHeader>잡아잇트렌드</JobitTrendHeader>
-        <InformationHeader>정보공유게시판</InformationHeader>
-        <QNAHeader>현직자 Q&A</QNAHeader>
+        <MenuGroup>
+          <JobitTrendHeader>잡아잇트렌드</JobitTrendHeader>
+          <InformationHeader>정보공유게시판</InformationHeader>
+          <QNAHeader>현직자 Q&A</QNAHeader>
+        </MenuGroup>
       </LayoutFirst>
       <HeaderStroke />
       <ContentArea>
@@ -53,74 +55,73 @@ function Main() {
 
 export default Main;
 
-const GlobalStyle = createGlobalStyle`
- html, body { /* html과 body 요소에 동시에 적용 */
-    margin: 0;
-    padding: 0; /* 혹시 모를 padding도 제거 */
-  }
-  @font-face {
-    font-family: "JetBrainsMono";
-    src: url("/JetBrainsMono-Regular.ttf") format("truetype"); /* 절대 경로 */
-   
-
-  }
-`;
 const LayoutFirst = styled.div`
   display: flex;
   flex-direction: row;
+  height: 100px;
+  width: 1920px;
+  align-items: center;
+  padding: 0 40px; /* 좌우 여백 */
 `;
 const JobitTrendHeader = styled.div`
-  width: 314px;
-  height: 66px;
+  width: 150px;
+  height: 100px;
   flex-shrink: 0;
   color: #000;
-
+  display: flex;
+  justify-content: center;
   text-align: center;
-  font-family: Roboto;
-  font-size: 28px;
+  align-items: center;
+
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: -2.8px;
+  font-family: "JetBrains Mono";
 `;
 const InformationHeader = styled.div`
-  width: 242px;
-  height: 66px;
+  display: flex;
+  width: 150px;
+  height: 100px;
   flex-shrink: 0;
   color: #000;
-
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-family: Roboto;
-  font-size: 28px;
+
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -2.8px;
-
+  font-family: "JetBrains Mono";
   opacity: 0.55;
 `;
 const QNAHeader = styled.div`
-  width: 242px;
-  height: 66px;
+  width: 150px;
+  height: 100px;
   flex-shrink: 0;
   color: #000;
-
+  display: flex;
+  justify-content: center;
   text-align: center;
-  font-family: Roboto;
-  font-size: 28px;
+  align-items: center;
+
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -2.8px;
-
+  font-family: "JetBrains Mono";
   opacity: 0.55;
 `;
 const JobitHeader = styled.div`
   width: 309px;
-  height: 50px;
+  height: 100px;
   flex-shrink: 0;
   color: rgba(0, 13, 201, 0.91);
-
+  display: flex;
   text-align: center;
   font-family: "JetBrains Mono";
   font-size: 60px;
@@ -137,4 +138,9 @@ const HeaderStroke = styled.div`
   width: 1920px;
   height: 1px;
   background: rgba(0, 0, 0, 0.2);
+`;
+const MenuGroup = styled.div`
+  display: flex;
+  gap: -150px; /* 메뉴 사이 간격 */
+  margin-left: -180px; /* JobIt과 메뉴 사이 간격 */
 `;
