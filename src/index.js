@@ -7,6 +7,7 @@ import Signup from "./SignUp";
 import Home from "./Home";
 import LocalSignuPage from "./LocalSignuPage";
 import SignUpLocal from "./SignUpLocal";
+import MoreInfo from "./moreinfo/MoreInfo";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ root.render(
         <Route path="/lsp" element={<LocalSignuPage />} />
         <Route path="/signuplocal" element={<SignUpLocal />} />
         <Route path="/jp" element={<JobitPage />} />
+        <Route path="/moreinfo" element={<MoreInfo />} />
       </Routes>
     </Router>
   </React.StrictMode>
